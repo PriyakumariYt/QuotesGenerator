@@ -8,7 +8,11 @@ const NewQuote = async () => {
   const newdata = Math.floor(Math.random() * alldata.length);
   const Nextquote = alldata[newdata].text;
   text.innerHTML = Nextquote;
-  const authorName = alldata[newdata].author;
-  author.innerHTML = " ~ " + authorName;
+ const authorName = alldata[newdata].author;
+  if (authorName != null) {
+    author.innerHTML = " ~ " + authorName;
+  } else {
+    author.innerHTML = " ~ " + "Unknown";
+  }
 };
 NewQuote();
